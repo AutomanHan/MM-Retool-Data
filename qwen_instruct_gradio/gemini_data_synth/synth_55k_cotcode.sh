@@ -1,0 +1,3 @@
+inputfile=/mnt/dolphinfs/hdd_pool/docker/user/hadoop-basecv/hancong/code/pretrain/reasoning/data/Data_Tool/Filter_Process/acc_res_55k_debug.jsonl
+outputfile=/mnt/dolphinfs/hdd_pool/docker/user/hadoop-basecv/hancong/code/pretrain/reasoning/data/MM-Eureka-Dataset/synth_gemini_cot_code/dataset_55k_cot_code.jsonl
+python3 synth_answer_code.py --inp ${inputfile} --out ${outputfile} --rpm 30 --total 14960

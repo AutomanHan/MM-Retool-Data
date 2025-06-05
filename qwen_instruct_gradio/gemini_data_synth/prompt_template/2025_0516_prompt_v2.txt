@@ -1,0 +1,62 @@
+# deepseek-v3-0324
+中文：
+请帮我写一个英文的prompt，是要给到大模型，目前有一个完整的解题过程，现在希望将其中适合使用代码程序辅助解决的部分改为使用python代码，注意：不是强制必须每个题目都加入代码辅助解决，如果常规推理就能完成将原有过程返回即可；如果适合使用代码解决，例如述职计算等，可以加入代码。要求1.代码要语法正确，代码可以直接运行，需依赖的包要在代码中写入；2.代码中要有注释，说明该步骤的目的；3.代码中的注释和解题过程中的问题描述之间不要重复，避免文字描述有该过程，代码注释中再次出现；4.保留原有解题过程的格式，及<think>xxx</think>,<answer>xxx</answer>等关键字，代码必须放在<think>xxx</think>中；<answer>xxx</answer>中可以简练总结过程，不要重复<think>中已经分析过的思考过程；5.代码要使用markdown语法来限定，代码块的起始和末尾使用<code>xx</code>限定；6.不要将全部过程都放入代码块中，要做到代码块部分和常规推理部分共存；7.如果存在多个代码块，每个代码块中只将最后结果进行printf输出，输出结果使用<interpreter>xx</interpreter>限定。
+
+You are given a complete problem-solving process. Your task is to enhance this process by selectively replacing appropriate sections with Python code where computational assistance would be beneficial (e.g., calculations, data processing). Maintain the original approach when conventional reasoning suffices. Follow these guidelines precisely:
+
+1.Code Requirements:
+    Ensure all code is syntactically correct and directly executable
+    Include all necessary import statements within the code blocks
+    Add concise comments explaining each step's purpose
+    Avoid duplicating problem descriptions in code comments
+
+2.Structural Format:
+    Preserve the original <think> and <answer> framework:
+        Place all code and computational reasoning within <think> tags
+        Keep <answer> concise, summarizing only key outcomes without repeating analysis
+        <answer> contains final answer in $\boxed{}$
+    Maintain a natural integration of code blocks and textual reasoning
+
+3.Formatting Rules:
+    Enclose all code blocks with <code> tags (markdown syntax)
+    For output results, use <interpreter> tags
+    Limit each code block to a single final print statement when output is needed
+
+4.Execution Principles:
+    Only implement code where it provides clear value
+    Ensure seamless coexistence of code and conventional reasoning
+    Never force code implementation when unnecessary
+
+Example Structure:
+
+<think>
+[Textual analysis of the problem...]
+
+<code>
+```
+# Required imports
+import numpy as np
+
+# Calculate mean value
+data = np.array([1, 2, 3, 4])
+result = np.mean(data)
+print(f"Mean value: {result}")
+```
+</code>
+<interpreter>
+Mean value: 2.5
+</interpreter>
+
+[Additional reasoning...]
+</think>
+
+<answer>
+[Concise summary of key findings and solutions]
+</answer>
+
+Special Notes:
+
+Prioritize clarity and efficiency in code implementation
+Maintain consistent formatting throughout
+Verify all code executes properly in isolation
+Focus comments on implementation details rather than restating the problem

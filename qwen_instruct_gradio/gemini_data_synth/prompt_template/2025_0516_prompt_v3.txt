@@ -1,0 +1,71 @@
+# deepseek-v3-0324
+中文：
+请帮我写一个英文的prompt，是要给到大模型，目前有一个完整的解题过程，现在希望将其中适合使用代码程序辅助解决的部分改为使用python代码，注意：不是强制必须每个题目都加入代码辅助解决，如果常规推理就能完成将原有过程返回即可；如果适合使用代码解决，例如述职计算等，可以加入代码。要求1.代码要语法正确，代码可以直接运行，需依赖的包要在代码中写入；2.代码中要有注释，说明该步骤的目的；3.代码中的注释和解题过程中的问题描述之间不要重复，避免文字描述有该过程，代码注释中再次出现；4.保留原有解题过程的格式，及<think>xxx</think>,<answer>xxx</answer>等关键字，代码必须放在<think>xxx</think>中；<answer>xxx</answer>中可以简练总结过程，不要重复<think>中已经分析过的思考过程；5.代码要使用markdown语法来限定，代码块的起始和末尾使用<code>xx</code>限定；6.不要将全部过程都放入代码块中，要做到代码块部分和常规推理部分共存；7.如果存在多个代码块，每个代码块中只将最后结果进行printf输出，输出结果使用<interpreter>xx</interpreter>限定；8.不要过度推理，如果输入的推理过程很简单可以做精简，避免输出过长。
+
+英文：
+
+You are given a complete problem-solving process. Review it and selectively replace appropriate sections with Python code where computational assistance would be beneficial (e.g., calculations, data processing). Follow these strict guidelines:
+
+1.Code Implementation Rules:
+    Only add code where it provides clear computational value
+    Ensure all code is production-ready:
+        Correct syntax and complete imports
+        Directly executable
+        Single print statement per block for final output
+    Include brief, non-redundant comments explaining implementation logic
+
+2.Structural Requirements:
+    Maintain original <think>/<answer> framework:
+        All code must appear within <think> blocks
+        <answer> contains only novel conclusions (no repetition) and final answer in $\boxed{}$
+    Preserve natural flow between:
+        Textual reasoning
+        Code blocks (marked with <code>)
+        Outputs (marked with <interpreter>)
+
+3.Content Principles:
+    Never duplicate explanations between:
+        Problem description
+        Code comments
+        Answer summary
+    Keep outputs concise - avoid verbose explanations
+    Simplify straightforward reasoning processes
+
+Example Implementation:
+
+<think>
+First, we need to calculate the statistical properties of the dataset.
+
+<code>
+```
+import numpy as np
+
+# Calculate core statistics for numerical analysis
+values = np.array([12, 15, 18, 22])
+mean = np.mean(values)
+std_dev = np.std(values)
+print(f"Statistics| Mean:{mean:.2f}, SD:{std_dev:.2f}")
+```
+</code>
+<interpreter>
+Statistics| Mean:16.75, SD:3.59
+</interpreter>
+
+The results suggest we should...
+</think>
+
+<answer>
+The analysis indicates moderate variability (SD=3.59) around the mean of 16.75.
+</answer>
+
+Critical Compliance Notes:
+
+1.Never force code where unnecessary
+2.Maintain strict separation of:
+    Problem description (original text)
+    Implementation details (code comments)
+    Final conclusions (answer)
+3.All outputs must validate against:
+    Correct execution
+    Minimal duplication
+    Appropriate brevity

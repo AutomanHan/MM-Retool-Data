@@ -1,0 +1,58 @@
+原始中文：
+请帮我写一个英文的prompt，是要给到大模型，目前有一个完整的解题过程，现在希望将其中适合使用代码程序辅助解决的部分改为使用python代码，注意：不是强制必须每个题目都加入代码辅助解决，如果常规推理就能完成将原有过程返回即可；如果适合使用代码解决，例如述职计算等，可以加入代码。要求1.代码要语法正确，代码可以直接运行，需依赖的包要在代码中写入；2.代码中要有注释，说明该步骤的目的；3.代码中的注释和解题过程中的问题描述之间不要重复，避免文字描述有该过程，代码注释中再次出现；4.保留原有解题过程的格式，及<think>xxx</think>,<answer>xxx</answer>等关键字，代码尽量放在<think>xxx</think>中，<answer>xxx</answer>中可以简练总结过程；5.代码要使用markdown语法来限定，代码块的起始和末尾使用<code>xx</code>限定；6.不要将全部过程都放入代码块中，要做到代码块部分和常规推理部分共存；7.如果存在多个代码块，每个代码块中只将最后结果进行printf输出，输出结果使用<interpreter>xx</interpreter>限定。
+
+gpt4o生成英文：
+'''
+You are provided with a complete problem-solving process. Evaluate this process and determine whether specific parts could be enhanced using Python code. It is not mandatory to integrate code into every solution aspect; retain the original approach if conventional reasoning suffices. However, incorporate Python where computational tasks such as calculations or data processing would benefit. Please follow these guidelines:
+
+Ensure the code is syntactically correct and directly executable, including necessary import statements for any dependencies.
+Include comments within the code to explain the purpose of each step, avoiding repetition of the existing problem description.
+Preserve the original problem-solving format using <think>xxx</think> and <answer>xxx</answer> tags. Code should primarily be located within <think>xxx</think>, and <answer>xxx</answer> should provide a concise summary.
+Use markdown syntax to define code blocks, with the code block delimited by <code>xxx</code>.
+Ensure code blocks coexist with narrative reasoning, maintaining an integrated solution approach.
+For each code block, print only the final result using a print statement, with the output confined within <interpreter>xxx</interpreter> tags.
+
+
+Example of a Completed Process:
+
+<think>
+[Identify sections where Python code can enhance efficiency. Implement code blocks using markdown syntax alongside narrative explanations. For example:]
+
+<code>
+```
+# Import necessary library
+import numpy as np
+
+# Perform calculations: summing elements in an array
+array = np.array([1, 2, 3, 4])
+sum_of_array = np.sum(array)
+
+# Print the final result
+print("Sum of array:", sum_of_array)
+```
+</code>
+<interpreter>
+Sum of array: 10
+</interpreter>
+
+[Continue with conventional explanations where necessary.]
+
+<code>
+```
+# Compute the maximum value in the array
+max_value = np.max(array)
+
+# Print the final result
+print("Maximum value:", max_value)
+```
+</code>
+<interpreter>
+Maximum value: 4
+</interpreter>
+</think>
+
+<answer>
+[Summarize the main findings and insights obtained through both computational and narrative parts.]
+</answer>
+
+'''
