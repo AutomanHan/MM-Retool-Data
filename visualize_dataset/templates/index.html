@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>多模态数据集可视化</title>
+    <style>
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .data-item { border: 1px solid #ddd; margin: 10px 0; padding: 15px; border-radius: 8px; }
+        details { margin: 10px 0; }
+        summary { cursor: pointer; padding: 5px; background: #f0f0f0; border-radius: 4px; }
+        img { max-width: 300px; height: auto; margin: 5px; border: 1px solid #ccc; }
+        .controls { margin: 20px 0; padding: 10px; background: #f8f9fa; }
+        .pagination { margin: 10px 0; }
+        .page-btn { margin: 0 5px; padding: 5px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>多模态数据集可视化</h1>
+        <div class="controls">
+            <label>每页显示: 
+                <select id="perPage" onchange="loadData()">
+                    <option value="50">50</option>
+                    <option value="100" selected>100</option>
+                    <option value="200">200</option>
+                </select>
+            </label>
+            <label>随机采样: <input type="checkbox" id="random" onchange="loadData()"></label>
+            <button onclick="prevPage()">上一页</button>
+            <button onclick="nextPage()">下一页</button>
+            <span id="pageInfo"></span>
+        </div>
+        <div id="content"></div>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        let totalItems = 0;
+        let perPage = 100;
+
+        async function loadData() {
+            perPage = parseInt(document.getElementById('perPage').value);
+            const random = document.getElementById('random').checked;
+            
+            const response = await fetch(`/api/data?page=${currentPage}&per_page=${perPage}&random=${random}`);
+            const result = await response.json();
+            
+            totalItems = result.total;
+            renderData(result.data);
+            updatePageInfo();
+        }
+
+        function renderData(items) {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = items.map(item => `
+                <div class="data-item">
+                    <h3>ID: ${item.id}</h3>
+                    
+                    ${item.images.map(img => `
+                        <details open>
+                            <summary>图片预览</summary>
+                            <img src="${img}" alt="图片">
+                            <div>路径: ${img}</div>
+                        </details>
+                    `).join('')}
+
+                    <details>
+                        <summary>问题 (${item.question.length}字)</summary>
+                        <p>{${item.question}}</p>
+                    </details>
+
+                    <details>
+                        <summary>答案 (${item.answer.length}字)</summary>
+                        <pre>{${item.answer}}</pre>
+                    </details>
+                </div>
+            `).join('');
+        }
+
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                loadData();
+            }
+        }
+
+        function nextPage() {
+            if ((currentPage + 1) * perPage < totalItems) {
+                currentPage++;
+                loadData();
+            }
+        }
+
+        function updatePageInfo() {
+            document.getElementById('pageInfo').innerHTML = 
+                `第 ${currentPage + 1} 页 (共 ${Math.ceil(totalItems/perPage)} 页)`;
+        }
+
+        // 初始加载
+        loadData();
+    </script>
+</body>
+</html>
