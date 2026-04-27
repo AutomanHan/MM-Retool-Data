@@ -1,0 +1,158 @@
+[
+    [
+        "\nSyntaxError: invalid syntax",
+        125
+    ],
+    [
+        "\nSyntaxError: unterminated string literal (detected at line 2)",
+        36
+    ],
+    [
+        "\nSyntaxError: unterminated string literal (detected at line 1)",
+        35
+    ],
+    [
+        "\nTypeError: expected string or buffer",
+        18
+    ],
+    [
+        "\nSyntaxError: invalid decimal literal",
+        12
+    ],
+    [
+        "\nSyntaxError: unterminated string literal (detected at line 4)",
+        10
+    ],
+    [
+        "\nSyntaxError: invalid character '\u00d7' (U+00D7)",
+        5
+    ],
+    [
+        "\nSyntaxError: invalid character '\uff0c' (U+FF0C)",
+        4
+    ],
+    [
+        "\nSyntaxError: invalid character '\u2220' (U+2220)",
+        4
+    ],
+    [
+        "\nSyntaxError: invalid character '\u2014' (U+2014)",
+        4
+    ],
+    [
+        "\nimport math\n\n# Step 1: Calculate diagonal AC of rectangle ABCD\nAB = 3\nBC = 4\nAC = math.sqrt(AB**2 + BC**2)  # AC = 5\n\n# Step 2: Find length of OC (half of AC)\nOC = AC / 2  # OC = 2.5\n\n# Step 3: Perimeter of rhombus BFCO (4 times side length)\nperimeter = 4 * OC\n\nprint(perimeter)\n</code>\n<interpreter>\nSyntaxError: invalid syntax",
+        3
+    ],
+    [
+        "\nSyntaxError: invalid character '\u2192' (U+2192)",
+        3
+    ],
+    [
+        "\nNameError: name 'AB' is not defined",
+        2
+    ],
+    [
+        "\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?",
+        2
+    ],
+    [
+        "\nNameError: name 'k' is not defined",
+        2
+    ],
+    [
+        "\nNameError: name 'math' is not defined",
+        2
+    ],
+    [
+        "\nSyntaxError: unterminated string literal (detected at line 6)",
+        2
+    ],
+    [
+        "\nNameError: name 'x' is not defined",
+        2
+    ],
+    [
+        "\nSyntaxError: invalid character '\u221a' (U+221A)",
+        2
+    ],
+    [
+        "\nimport math\n\n# Step 1: Calculate diagonal AC of rectangle ABCD\nAB = 3\nBC = 4\nAC = math.sqrt(AB**2 + BC**2)  # AC = 5\n\n# Step 2: Find length of OC (half of AC)\nOC = AC / 2  # OC = 5/2 = 2.5\n\n# Step 3: Perimeter of rhombus BFCO (4 times side length)\nperimeter = 4 * OC\n\nprint(perimeter)\n</code>\n<interpreter>\nSyntaxError: invalid syntax",
+        1
+    ],
+    [
+        "\nSyntaxError: unterminated string literal (detected at line 3)",
+        1
+    ],
+    [
+        "\nSyntaxError: unterminated string literal (detected at line 13)",
+        1
+    ],
+    [
+        "\nSyntaxError: expected 'else' after 'if' expression",
+        1
+    ],
+    [
+        "\nSyntaxError: unterminated string literal (detected at line 8)",
+        1
+    ],
+    [
+        "\nRuntimeError",
+        1
+    ],
+    [
+        "\nNameError: name 'total' is not defined",
+        1
+    ],
+    [
+        "\nSyntaxError: closing parenthesis ')' does not match opening parenthesis '['",
+        1
+    ],
+    [
+        "\nSyntaxError: invalid character '\u2264' (U+2264)",
+        1
+    ],
+    [
+        "\nSyntaxError: invalid character '\u25b3' (U+25B3)",
+        1
+    ],
+    [
+        "Traceback (most recent call last):\n\n  File \"<stdin>\", line 1, in <module>\n\nSyntaxError: unterminated string literal (detected at line 2)",
+        1
+    ],
+    [
+        "Traceback (most recent call last):\n\n  File \"demo.py\", line 7, in demo\n    result = solve()\n\n  File \"demo.py\", line 10, in solve\n    return 4\n\nNameError: name 'solve' is not defined\n\nWait, no, the code is correct. The issue is in the interpreter setup. Let's run the code directly.\n\n<code>\nimport math\n\ndef solve():\n    return 4\n\nresult = solve()\nprint(f\"The radius of the spheres is {result} cm.\")\n</code>\n<interpreter>\nSyntaxError: unterminated string literal (detected at line 11)",
+        1
+    ],
+    [
+        "Traceback (most recent call last):\n\n  File \"<stdin>\", line 1, in <module>\n\nNameError: name 'solve' is not defined\n\nWait, no, the code is in a function. Let's run it as:\n\n```python\ndef solve():\n    return 4\n\nresult = solve()\nprint(result)  # Should print 4\n```\nRunning this:\n\n<code>\ndef solve():\n    return 4\n\nresult = solve()\nprint(result)\n</code>\n<interpreter>\nSyntaxError: invalid syntax",
+        1
+    ],
+    [
+        "\nNameError: name 'angle_c' is not defined",
+        1
+    ],
+    [
+        "\nSyntaxError: unmatched ')'",
+        1
+    ],
+    [
+        "\nNameError: name 'DC' is not defined",
+        1
+    ],
+    [
+        "\n7.384615384615385? No, wait 10*tan(60) is 10*1.73205=17.3205, rounded to 1 is 17.3. Let me run the code:\n\n<code>\nimport math\na = 10\nangle = 60\n.radians(60) is pi/3 \u22481.0472 rad\nmath.tan(1.0472) \u22481.73205\na * math.tan(math.radians(angle)) = 10 * 1.73205 = 17.3205\nround(17.3205,1) =17.3\nprint(17.3)\n</code>\n<interpreter>\nSyntaxError: invalid character '\u2248' (U+2248)",
+        1
+    ],
+    [
+        "\nSyntaxError: invalid character '\u00b2' (U+00B2)",
+        1
+    ],
+    [
+        "\nNameError: name 'y' is not defined",
+        1
+    ],
+    [
+        "\nSyntaxError: only single target (not tuple) can be annotated",
+        1
+    ]
+]
